@@ -70,7 +70,7 @@ contract FundMe {
         (bool callSuccess,) = payable(msg.sender).call{value: address(this).balance}("");
         require(callSuccess, "Call failed");
     }
-    
+
     // Explainer from: https://solidity-by-example.org/fallback/
     // Ether is sent to contract
     //      is msg.data empty?
@@ -94,7 +94,7 @@ contract FundMe {
     /**
      * View Functions
      */
-    function getAddressToAmountFunded(address fundingAddress) external view returns (uint256){
+    function getAddressToAmountFunded(address fundingAddress) external view returns (uint256) {
         return s_addressToAmountFunded[fundingAddress];
     }
 
@@ -102,7 +102,7 @@ contract FundMe {
         return s_funders[index];
     }
 
-    function getOwner() external view returns (address){
+    function getOwner() external view returns (address) {
         return i_owner;
     }
 }
